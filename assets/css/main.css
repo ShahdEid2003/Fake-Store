@@ -1,0 +1,31 @@
+@import './base.css';
+.category{
+    padding:10px;
+    margin: 10px;
+    box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.3);
+    width: 20%;
+    text-align: center;
+
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+.product{
+    padding:10px;
+    margin: 10px;
+    box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.3);
+    width: 20%;
+    text-align: center;
+}
+img {
+    width: 200px;
+    height: 150px;
+}
+
+.price{
+   font-weight: bold; 
+  
+}
