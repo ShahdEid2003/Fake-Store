@@ -2,15 +2,10 @@
     margin: 0;
     padding: 0;
 }
-:root{
-    --mainColor:#545BE8;
-    --mainFont: "Poppins", sans-serif;
-    --subFont: "Inter", sans-serif;
-}
+
 ul{
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+
 }
 a{
     text-decoration: none;
@@ -21,8 +16,9 @@ a{
 }
 .row{
     display : flex;
-    justify-content:center;
+    justify-content:space-between;
     flex-wrap: wrap;
+    gap:20px;
     
 
 }
