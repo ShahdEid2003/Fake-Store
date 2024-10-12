@@ -1,8 +1,10 @@
 @import './base.css';
-body{
+
+body {
     height: 1000px;
-   
+
 }
+
 .header {
     background-color: #FFFFFF;
     padding: 10px;
@@ -13,7 +15,8 @@ body{
 
 }
 
-.nav ul li, .bttn-menu{
+.nav ul li,
+.bttn-menu {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -21,50 +24,79 @@ body{
 
 
 }
-.nav ul li a{
-    
+
+.nav ul li a {
     font-size: large;
     font-weight: bold;
     color: black;
 }
-.category{
+
+.category {
     background-color: #e2dfec;
-    padding:10px;
+    padding: 10px;
     margin: 10px;
     box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.3);
     width: 20%;
     text-align: center;
 
+
 }
-.products{
+
+.categories {
+    margin: 30px;
+}
+
+.allProducts {
+    text-align: center;
+    margin: 5px;
+}
+
+.allProducts a {
+    color: #000000;
+    width: 20px;
+    background-color: #bbb9b9;
+    box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 900;
+
+}
+
+.products {
     display: flex;
-    
     flex-wrap: wrap;
-    
-    
+
 }
-.product{
-    padding:10px;
+
+.product {
+
+    padding: 10px;
     margin: 10px;
     border: 2px black solid;
     width: 20%;
     text-align: center;
-    
+
 }
-.products .row{
+
+.products .row {
     justify-content: center;
-    gap:50px;
+    gap: 50px;
 }
+
+
 img {
     width: 200px;
     height: 150px;
 }
 
-.price{
-   font-weight: bold; 
-  
+.price {
+    font-weight: bold;
+
 }
-.product:hover ,.category:hover {
+
+.product:hover,
+.category:hover
+{
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(15, 13, 13, 0.2);
 }
