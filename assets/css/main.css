@@ -1,7 +1,7 @@
 @import './base.css';
 
 body {
-    height: 1500px;
+    
     background-color: #eee7e71f;
 
 }
@@ -93,12 +93,14 @@ border-bottom-color:transparent ;
 
 .allProducts a {
     color: #000000;
-    width: 20px;
-    background-color: #bbb9b9;
-    box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    font-weight:bold;
+    background-color: #e2dfec9f;
     padding: 10px;
-    font-weight: 900;
+    margin: 10px;
+    box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.3);
+    width: 10%;
+    text-align: center;
+   
 
 }
 
@@ -139,4 +141,78 @@ img {
 {
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(15, 13, 13, 0.2);
+}
+/*pagenation--------------------*/
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    display: block;
+    padding: 10px 15px;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+/* countdown*/
+
+.count-down{
+    background-color: #e2dfec9f;
+    margin: 30px;
+    padding: 20px;
+    text-align: center; 
+}
+.count-down h2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.countDown-timer{
+
+  
+    height:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:60px;
+
+}
+.time{
+    
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(15, 13, 13, 0.2);
+    width:80px;
+    color: rgb(3, 12, 20);
+    font-size: 50px;
+    font-weight: bold;
+    
 }
