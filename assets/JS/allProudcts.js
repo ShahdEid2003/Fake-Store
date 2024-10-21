@@ -17,12 +17,12 @@ const displayProducts = async (page = 1) => {
 
         const result = data.products.map((product) => {
             return `
-        <div class="product">
-            <img src='${product.thumbnail}' alt="${product.description}">
-            <h3>${product.title}</h3>
-           <span class="price">${product.price}</span>
-        </div>
-        `;
+            <div class="product">
+                <img src='${product.thumbnail}' alt="${product.description} " class="images">
+                <h3>${product.title}</h3>
+                <span class="price">${product.price}</span>
+            </div>
+             `;
         }).join(' ');
         document.querySelector(".products .row").innerHTML = result;
 
@@ -38,7 +38,7 @@ const displayProducts = async (page = 1) => {
 
 
         for (let i = 1; i <= numberOfPages; i++) {
-            pagenationLinks += `<li class="page-item ${i == page?'active':''}"><button onclick=displayProducts('${i}') class="page-link">${i}</button></li>`;
+            pagenationLinks += `<li class="page-item ${i == page ? 'active' : ''}"><button onclick=displayProducts('${i}') class="page-link">${i}</button></li>`;
         }
 
         if (page == numberOfPages) {
@@ -49,6 +49,7 @@ const displayProducts = async (page = 1) => {
         }
 
         document.querySelector(".pagination").innerHTML = pagenationLinks;
+        modal();
 
     }
     catch (error) {
@@ -60,3 +61,48 @@ const displayProducts = async (page = 1) => {
 
 };
 displayProducts();
+
+
+function modal() {
+    const rightArrow = document.querySelector(".rightarrow");
+    const leftArrow = document.querySelector(".leftarrow");
+    const close = document.querySelector(".close-page");
+    const images = Array.from(document.querySelectorAll(".images"));
+    const modal = document.querySelector(".my-modal");
+    let currentIndex = 0;
+    images.forEach(function (img) {
+
+        img.addEventListener("click", function (e) {
+            modal.classList.remove("d-none");
+            modal.querySelector("img").setAttribute("src", e.target.src);
+            currentImg = e.target;
+            currentIndex = images.indexOf(currentImg);
+
+
+        });
+    });
+    rightArrow.addEventListener("click", function () {
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        const src = images[currentIndex].src;
+        modal.querySelector("img").setAttribute("src", src);
+
+    });
+    leftArrow.addEventListener("click", function () {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+        const src = images[currentIndex].src;
+        modal.querySelector("img").setAttribute("src", src);
+    
+    });
+
+    close.addEventListener("click", function () {
+        modal.classList.add("d-none");
+    });
+
+
+}
