@@ -18,7 +18,7 @@ const displayProducts = async (page = 1) => {
         const result = data.products.map((product) => {
             return `
             <div class="product">
-                <img src='${product.thumbnail}' alt="${product.description} " class="images">
+                <img  id ="details-${product.id}" src='${product.thumbnail}' alt="${product.description} " class="images">
                 <h3>${product.title}</h3>
                 <span class="price">${product.price}</span>
             </div>
@@ -64,6 +64,7 @@ displayProducts();
 
 
 function modal() {
+
     const rightArrow = document.querySelector(".rightarrow");
     const leftArrow = document.querySelector(".leftarrow");
     const close = document.querySelector(".close-page");
@@ -78,9 +79,11 @@ function modal() {
             currentImg = e.target;
             currentIndex = images.indexOf(currentImg);
 
-
         });
+        
+       
     });
+
     rightArrow.addEventListener("click", function () {
         currentIndex++;
         if (currentIndex >= images.length) {
@@ -92,11 +95,13 @@ function modal() {
     });
     leftArrow.addEventListener("click", function () {
         currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = images.length - 1;
+        if (currentIndex <= 0) {
+            currentIndex = images.length;
         }
         const src = images[currentIndex].src;
         modal.querySelector("img").setAttribute("src", src);
+
+        
     
     });
 

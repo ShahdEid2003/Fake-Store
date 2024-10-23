@@ -14,9 +14,8 @@ const displayProducts = async () => {
             return `
         <div class="product">
             <img src='${product.thumbnail}' alt="${product.description}">
-            <h3>${product.title}</h3>
-           <span class="price">${product.price}</span>
-        </div>
+            <a href="proudctDetails.html?id=${product.id}">Details</a>
+         </div>
         `;
         }).join(' ');
         document.querySelector(".products .row").innerHTML = result;
