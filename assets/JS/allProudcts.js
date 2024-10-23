@@ -19,8 +19,7 @@ const displayProducts = async (page = 1) => {
             return `
             <div class="product">
                 <img  id ="details-${product.id}" src='${product.thumbnail}' alt="${product.description} " class="images">
-                <h3>${product.title}</h3>
-                <span class="price">${product.price}</span>
+                <a href="proudctDetails.html?id=${product.id}">Details</a>
             </div>
              `;
         }).join(' ');

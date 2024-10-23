@@ -9,11 +9,11 @@ const displayProductsDetails = async () => {
     const data = await getProductsDetails();
     const loader = document.querySelector('.loader-container')
     loader.classList.add('active');
-   
+    
     try {
         
-        const result = `<div class="img" >
-        
+        const result = `
+        <div class="img" >
             <img src='${data.thumbnail}' alt="${data.description}">
         </div>
         <div class="details">
